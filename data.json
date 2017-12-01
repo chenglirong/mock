@@ -1,0 +1,34 @@
+[
+	{
+		"name":"掌上银行下载",
+		"class":"icon iconfont icon-dizhi-01"
+	},
+	{
+		"name":"行情数据",
+		"class":"icon iconfont icon-dizhi-01"
+	},
+	{
+		"name":"图说农行",
+		"class":"icon iconfont icon-dizhi-01"
+	},
+	{
+		"name":"营业机构查询",
+		"class":"icon iconfont icon-dizhi-01"
+	},
+	{
+		"name":"在线预约排队",
+		"class":"icon iconfont icon-dizhi-01"
+	},
+	{
+		"name":"信用卡申请",
+		"class":"icon iconfont icon-dizhi-01"
+	},
+	{
+		"name":"智能客服",
+		"class":"icon iconfont icon-dizhi-01"
+	},
+	{
+		"name":"WAP网银登录",
+		"class":"icon iconfont icon-dizhi-01"
+	}
+]

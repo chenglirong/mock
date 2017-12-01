@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,initial-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1.0">
+	<meta name="format-detection" content="telephone=no,email=no">
+	<script>
+		window.onload=window.onresize=function(){
+		rem = document.documentElement.clientWidth*50/375;
+		document.documentElement.style.fontSize = rem+'px';
+		}
+	</script>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="icon/iconfont.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+</head>
+<body>
+
+	<div class="box">
+		<header>
+			<p><img src="img/logo.png" alt=""></p>
+			<i class="icon iconfont icon-fangdajing"></i>
+			<i class="icon iconfont icon-gengduo-2"></i>
+		</header>
+		<section>
+			<div class="swiper-container page">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="img/1.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="img/2.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="img/3.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="img/4.jpg" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="img/5.jpg" alt="">
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<div class="nav">
+				<p>
+					<img src="img/ban.png" alt="">
+					<span>全国——农行掌银 注册开通抢豪礼！</span>
+					<em>2017-11-02</em>
+				</p>
+				<p>
+					<img src="img/ban2.bmp" alt="">
+					<span>关于我行线上支付相关系统升级的停机通告</span>
+					<em>2017-11-02</em>
+				</p>
+			</div>
+			<div class="main">
+				<p>便捷服务</p>
+				<ul class="list"></ul>
+			</div>
+		</section>
+		<footer></footer>
+	</div>
+
+	<script src="js/swiper.min.js"></script>
+
+	<script>
+
+		var swiper = new Swiper('.page', {
+			pagination: '.swiper-pagination',
+			autoplay: 2000,
+			loop: true
+		})
+
+		function ajax(url){
+                var xhr = null;
+                if(window.XMLHttpRequest){
+                    xhr =  new XMLHttpRequest();
+                }else{
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xhr.open('get',url,true);
+                xhr.send(null);
+                xhr.onreadystatechange =function(){
+					
+					if(xhr.status === 200){
+						if(xhr.readyState==4){
+							var list= JSON.parse(xhr.responseText);
+							console.log(list);
+							for(var i=0;i<list.length;i++) {
+								var li = document.createElement('li');
+								li.innerHTML=`<i class="icon iconfont ${list[i].class}"></i>
+												<span>${list[i].name}</span>`;
+								document.querySelector('.list').appendChild(li);
+							}
+						}
+					}
+            }
+        }
+        ajax("http://localhost:8080/news")
+
+	</script>
+	
+</body>
+</html>

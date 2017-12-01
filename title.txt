@@ -1,0 +1,8 @@
+# 要求
+    效果         √
+    gulp数据      √
+    github上传
+    monk
+    js压缩     √
+    css压缩    √
+    html压缩
